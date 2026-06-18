@@ -1,0 +1,15 @@
+{
+  "name": "conversation-rag-chatbot",
+  "version": "1.0.0",
+  "description": "Chronological conversation RAG with topic checkpoints, 100-message checkpoints, persona extraction, and a local chatbot.",
+  "type": "module",
+  "main": "src/server.js",
+  "scripts": {
+    "build:index": "node src/build_index.js",
+    "start": "node src/server.js",
+    "dev": "node src/server.js"
+  },
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}
