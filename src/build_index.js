@@ -7,7 +7,9 @@ import { attachVectors, createHundredMessageCheckpoints, createMessageChunks, cr
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const root = path.resolve(__dirname, "..");
-const dataPath = process.argv[2] || path.join(root, "data", "conversations.csv");
+const defaultDataPath = path.join(root, "data", "conversations.csv");
+const fallbackDataPath = path.join(root, "src", "conversation.csv");
+const dataPath = process.argv[2] || (fs.existsSync(defaultDataPath) ? defaultDataPath : fallbackDataPath);
 const outputDir = path.join(root, "data", "processed");
 
 fs.mkdirSync(outputDir, { recursive: true });
